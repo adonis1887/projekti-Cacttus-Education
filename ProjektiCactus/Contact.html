@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="icon" type="image/x-icon" href="logo1.png">
+
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="logo1.png">Steak House</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="rezervation.html">Rezervation</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Contact Us</h2>
+        </div>
+        <form>
+            <div>
+                <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div>
+                <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div>
+                <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+        
+    </div>
+
+    <!-- JavaScript --> 
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+     <footer>
+      <div style="text-align: center; padding: 20px; background-color: #333; color: #fff;">
+          <h1>&copy; 2024 Steak House. Të gjithë të drejtat janë të rezervuara.</h1>
+          <p> Prizren, Kosove| Tel: +383 49 59 32 59</p>
+          <p>Na ndiqni në rrjetet sociale:</p>
+          <div>
+              <a href="https://facebook.com" style="color:cornflowerblue; margin: 0 10px;">Facebook</a> |
+              <a href="https://instagram.com" style="color:red; margin: 0 10px;">Instagram</a> |
+              <a href="https://twitter.com" style="color:blue; margin: 0 10px;">Twitter</a>
+          </div>
+      </div>
+    </footer>
+</body>
+</body>
+</html>

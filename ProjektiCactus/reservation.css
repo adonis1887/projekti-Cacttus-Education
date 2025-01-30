@@ -1,0 +1,190 @@
+/* Navbar Styles */
+.navbar {
+  display: flex; /* Përdor flexbox për të organizuar elementët në navbar */
+  justify-content: space-around; /* Vendos elementët në navbar në distancë të barabartë */
+  align-items: center; /* Centron elementët vertikalisht */
+  padding: 10px 20px; /* Shton hapësirë brenda navbar-it */
+  background-color: #333; /* Ngjyra e sfondit të navbar-it */
+  color: white; /* Ngjyra e tekstit në navbar */
+}
+
+/* Logo Styles */
+.navbar .logo a {
+  font-size: 1.5em; /* Madhësia e tekstit për logon */
+  font-weight: bold; /* E bën tekstin e logos më të theksuar */
+  text-decoration: none; /* Heq vizën nga lidhja */
+  color: white; /* Ngjyra e tekstit të logos */
+}
+
+/* Nav links styles */
+.nav-links {
+  list-style: none; /* Hiq shenjat e listës nga nav links */
+  display: flex; /* Përdor flexbox për të rreshtuar elementët */
+  gap: 20px; /* Vendos hapësirë midis elementëve të listës */
+  margin: 0; /* Heq margjinat e paracaktuara */
+  padding: 0; /* Heq padding-un e paracaktuar */
+}
+
+/* Lidhjet brenda nav-links */
+.nav-links li {
+  display: block; /* Bën secilin element të listës si bllok */
+}
+
+/* Stili i lidhjeve në navbar */
+.nav-links a {
+  text-decoration: none; /* Heq vizën nga lidhja */
+  color: white; /* Ngjyra e lidhjeve */
+  font-size: 1em; /* Madhësia e tekstit për lidhjet */
+  transition: color 0.3s; /* Shton një kalim të butë për ngjyrën kur lidhen */
+}
+
+/* Efekti për ngjyrën e lidhjes kur kalon mbi të */
+.nav-links a:hover {
+  color: #f0a500; /* Ndryshon ngjyrën e lidhjeve kur kalon miu mbi to */
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none; /* Fshi hamburger-in për ekranet më të mëdhenj */
+  font-size: 1.5em; /* Madhësia e ikonës për hamburger */
+  cursor: pointer; /* Shto kursorin si dorë kur kalon mbi të */
+  color: white; /* Ngjyra e ikonës së hamburger-it */
+}
+
+/* Stilet kur menuja është aktive */
+.nav-links.active {
+  display: block; /* Shfaq menunë kur është aktive */
+  flex-direction: column; /* Organizoni lidhjet njëra nën tjetrën */
+  gap: 10px; /* Shto hapësirë midis elementëve */
+  background-color: #444; /* Ngjyra e sfondit të menu-së kur është aktive */
+  position: absolute; /* Pozicionimi absolut i menu-së */
+  top: 50px; /* Vendos menunë 50px nga maja */
+  right: 20px; /* Vendos menunë 20px larg djathtas */
+  padding: 10px; /* Shto hapësirë brenda menut */
+  border-radius: 20px; /* Këndet e rrumbullakosura për menunë */
+}
+
+/* Media Query për ekranet më të vogla (për hamburger menu) */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none; /* Fshi menunë për ekranet më të vogla */
+      flex-direction: column; /* Organizoni elementët njëri nën tjetrin */
+  }
+
+  .hamburger {
+      display: block; /* Shfaq hamburger-in për ekranet më të vogla */
+  }
+}
+
+/* Stilet për trupin e faqes */
+body {
+  font-family: 'Raleway', sans-serif; /* Vendos fontin për trupin e faqes */
+  background: linear-gradient(to right, #7B1FA2, #E91E63); /* Ngjyra gradiente e sfondit */
+  margin: 0; /* Heq margjinat e paracaktuara */
+  padding: 0; /* Heq padding-un e paracaktuar */
+  color: white; /* Ngjyra e tekstit për faqen */
+}
+
+/* Stilet për seksionet */
+.section {
+  position: relative; /* Pozicion relativ për seksionet */
+  height: 100vh; /* Lartësia e seksionit do të jetë sa ekrani */
+  display: flex; /* Përdor flexbox për pozicionimin e elementëve */
+  justify-content: center; /* Qendron elementët horizontalisht */
+  align-items: center; /* Qendron elementët vertikalisht */
+}
+
+/* Qendra e seksionit */
+.section-center {
+  width: 100%; /* Mbulo gjerësinë e plotë të seksionit */
+  max-width: 800px; /* Maksimumi i gjerësisë është 800px */
+}
+
+/* Stilet për formën e rezervimit */
+.booking-form {
+  background: url('https://i.imgur.com/8z1tx3u.jpg') no-repeat center; /* Vendos një foto si sfond për formularin */
+  background-size: cover; /* Bëj sfondin të mbulojë të gjithë formularin */
+  padding: 40px; /* Shto hapësirë brenda formularit */
+  border-radius: 10px; /* Këndet e rrumbullakosura për formularin */
+  position: relative; /* Pozicion relativ për formularin */
+  z-index: 1; /* Shto një indeks për të siguruar që formulari të jetë sipër */
+  overflow: hidden; /* Fshi çdo përmbajtje që del jashtë formularit */
+}
+
+/* Stilet për shtesën e mbështjellës për formularin */
+.booking-form::before {
+  content: ''; /* Krijo një element bosh */
+  position: absolute; /* Poziciono në mënyrë absolute */
+  top: 0; /* Vendosë në krye */
+  left: 0; /* Vendosë në majtas */
+  right: 0; /* Vendosë në të djathtë */
+  bottom: 0; /* Vendosë në fund */
+  background: rgba(0, 0, 0, 0.6); /* Ngjyra e mbështjellës (hije) */
+  z-index: -1; /* Vendos mbështjellësin poshtë formularit */
+}
+
+/* Stilet për titullin e formularit */
+.form-header h1 {
+  font-size: 36px; /* Madhësia e titullit */
+  margin: 0; /* Heq margjinat e paracaktuara */
+  text-align: center; /* Qendron titullin në qendër */
+  color: #fff; /* Ngjyra e titullit */
+}
+
+/* Stilet për grupin e fushave të formularit */
+.form-group {
+  margin-bottom: 20px; /* Hapësira poshtë çdo fushe */
+  position: relative; /* Pozicion relativ për grupet e fushave */
+}
+
+/* Stilet për fushat e formularit */
+.form-control {
+  background: rgba(255, 255, 255, 0.2); /* Ngjyra e sfondit për fushat */
+  color: white; /* Ngjyra e tekstit në fusha */
+  border: none; /* Hiq kufirin */
+  height: 50px; /* Lartësia e fushës */
+  border-radius: 25px; /* Këndet e rrumbullakosura */
+  padding: 0 20px; /* Shto hapësirë brenda fushave */
+  outline: none; /* Hiq konturin e fushës */
+  width: 100%; /* Mbulo gjithë gjerësinë e grupit të fushave */
+  box-shadow: none; /* Hiq hijen nga fusha */
+}
+
+/* Stilet për placeholder-in në fusha */
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Ngjyra e placeholder-it */
+}
+
+/* Stilet për etiketat brenda fushave të formularit */
+.form-label {
+  position: absolute; /* Pozicion absolut për etiketat */
+  top: -10px; /* Pozita lart në fushë */
+  left: 20px; /* Pozita majtas në fushë */
+  font-size: 12px; /* Madhësia e tekstit të etiketës */
+  color: #ff8846; /* Ngjyra e etiketës */
+  background: #333; /* Ngjyra e sfondit për etiketën */
+  padding: 0 5px; /* Shto hapësirë për etiketën */
+  border-radius: 3px; /* Këndet e rrumbullakosura për etiketën */
+  text-transform: uppercase; /* Shndërron tekstin në shkronja të mëdha */
+}
+
+/* Stilet për butonin e dërgimit */
+.submit-btn {
+  background-color: #ff8846; /* Ngjyra e sfondit të butonit */
+  color: white; /* Ngjyra e tekstit në buton */
+  border: none; /* Hiq kufirin */
+  border-radius: 25px; /* Këndet e rrumbullakosura për butonin */
+  padding: 15px 30px; /* Hapësira brenda butonit */
+  text-transform: uppercase; /* Shndërron tekstin në shkronja të mëdha */
+  font-weight: bold; /* Bën tekstin e butonit të theksuar */
+  width: 100%; /* Bën që butoni të mbulojë të gjithë gjerësinë e formularit */
+  cursor: pointer; /* Shton kursorin si dorë kur kalon mbi butonin */
+  transition: all 0.3s; /* Efekti i kalimit për ndryshimet e butonit */
+}
+
+/* Efekti për butonin kur kalon miu mbi të */
+.submit-btn:hover {
+  background-color: #e35e0a; /* Ndryshon ngjyrën e butonit kur kalon miu */
+  transform: scale(1.05); /* Zgjeron butonin pak kur kalon miu mbi të */
+}
+

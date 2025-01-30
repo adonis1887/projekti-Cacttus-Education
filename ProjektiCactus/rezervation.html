@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Form</title>
+    <link rel="stylesheet" href="reservation.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo1.png">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="logo1.png">Steak House</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="rezervation.html">Rezervation</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    <br><br><br><br><br><br>
+    <!-- Reservation Section -->
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="booking-form">
+                        <div class="form-header">
+                            <h1>Make Your Reservation</h1>
+                        </div>
+                        <form>
+                            <!-- Destination -->
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Country, ZIP, city..." required>
+                                <span class="form-label">Destination</span>
+                            </div>
+                            <!-- Dates -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="date" required>
+                                        <span class="form-label">Check In</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="date" required>
+                                        <span class="form-label">Check Out</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Guests -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" required>
+                                            <option value="" selected hidden>Number of Rooms</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="form-label">Rooms</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" required>
+                                            <option value="" selected hidden>Adults</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="form-label">Adults</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" required>
+                                            <option value="" selected hidden>Children</option>
+                                            <option>0</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                        <span class="form-label">Children</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contact Info -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="email" placeholder="Enter Your Email" required>
+                                        <span class="form-label">Email</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="tel" placeholder="Enter Your Phone" required>
+                                        <span class="form-label">Phone</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Submit -->
+                            <div class="form-btn">
+                                <button class="submit-btn">Book Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <footer>
+        <div style="text-align: center; padding: 20px; background-color: #333; color: #fff;">
+            <h1>&copy; 2024 Steak House. Të gjithë të drejtat janë të rezervuara.</h1>
+            <p> Prizren, Kosove| Tel: +383 49 59 32 59</p>
+            <p>Na ndiqni në rrjetet sociale:</p>
+            <div>
+                <a href="https://facebook.com" style="color:cornflowerblue; margin: 0 10px;">Facebook</a> |
+                <a href="https://instagram.com" style="color:red; margin: 0 10px;">Instagram</a> |
+                <a href="https://twitter.com" style="color:blue; margin: 0 10px;">Twitter</a>
+            </div>
+        </div>
+      </footer>
+</body>
+</body>
+</html>

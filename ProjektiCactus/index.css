@@ -1,0 +1,83 @@
+/* Navbar stili bazë */
+.navbar {
+  display: flex; /* Përdor fleksbox për të organizuar elementët horizontalisht */
+  justify-content: space-around; /* Vendos elementët me hapësirë të barabartë midis tyre */
+  align-items: center; /* Qendro elementët vertikalisht në qendër */
+  padding: 10px 20px; /* Jep hapësirë brenda navbar-it */
+  background-color: #333; /* Vendos ngjyrën e errët të sfondit */
+  color: white; /* Ngjyra e tekstit brenda navbar-it */
+}
+
+/* Stili për logo-n brenda navbar-it */
+.navbar .logo a {
+  font-size: 1.5em; /* Madhësia e tekstit për logon */
+  font-weight: bold; /* Bëj logon më të theksuar */
+  text-decoration: none; /* Hiq linjën nën tekstin e logon */
+  color: white; /* Ngjyra e bardhë për logon */
+}
+
+/* Lista e lidhjeve të navigimit */
+.nav-links {
+  list-style: none; /* Hiq bullet points nga lista */
+  display: flex; /* Përdor fleksbox për t’i vendosur lidhjet në rresht */
+  gap: 20px; /* Vendos hapësirë mes elementeve të listës */
+  margin: 0; /* Hiq margjinat e paracaktuara */
+  padding: 0; /* Hiq padding-un e paracaktuar */
+}
+
+/* Stili për çdo element të listës së navigimit */
+.nav-links li {
+  display: block; /* Bëj çdo element të listës një bllok të veçantë */
+}
+
+/* Stili për lidhjet e navigimit */
+.nav-links a {
+  text-decoration: none; /* Hiq linjën nën lidhje */
+  color: white; /* Ngjyra e bardhë për lidhjet */
+  font-size: 1em; /* Madhësia e tekstit të lidhjeve */
+  transition: color 0.3s; /* Efekti i kalimit të ngjyrës me tranzicion */
+}
+
+/* Efekti kur lidhja kalon mbi miun */
+.nav-links a:hover {
+  color: #f0a500; /* Ngjyra e lidhjes kur kalon miu */
+}
+
+/* Stili për ikonën hamburger që shfaqet në ekran të vogël */
+.hamburger {
+  display: none; /* Mos e shfaq në fillim */
+  font-size: 1.5em; /* Madhësia e ikonës */
+  cursor: pointer; /* Kursorin kur kalon mbi të */
+  color: white; /* Ngjyra e ikonës */
+}
+
+/* Klasa aktive për nav-links që shfaqet kur hamburger është klikuar */
+.nav-links.active {
+  display: block; /* Bëj listën të shfaqet */
+  flex-direction: column; /* Vendos elementet në kolona */
+  gap: 10px; /* Hapësirë mes elementeve */
+  background-color: #444; /* Ngjyrë më e ndritshme e sfondit */
+  position: absolute; /* Pozicionim absolut për t’u vendosur sipër përmbajtjes */
+  top: 50px; /* Vendosja nga lart */
+  right: 20px; /* Vendosja nga e djathta */
+  padding: 10px; /* Hapësirë brenda kutisë */
+  border-radius: 20px; /* Rrumbullakosja e këndeve të kutisë */
+  z-index: 10;
+}
+
+/* Media query për ekranet e vogla */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none; /* Mos shfaq listën e lidhjeve në ekranet e vogla */
+      flex-direction: column; /* Vendos lidhjet në kolona */
+  }
+
+  .hamburger {
+      display: block; /* Shfaq ikonën hamburger në ekranet e vogla */
+  }
+}
+
+/* Stili për logon në navbar me margjinë të majtë */
+.logo {
+  padding-left: 50px; /* Hapësirë të majtën për logon */
+}

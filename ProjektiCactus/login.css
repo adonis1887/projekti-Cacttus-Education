@@ -1,0 +1,171 @@
+/* Importimi i fontit "Poppins" nga Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/* Aplikimi i stilit të përgjithshëm në të gjithë elementët */
+* {
+  margin: 0; /* Hiq të gjitha margjinat e paracaktuara */
+  padding: 0; /* Hiq të gjitha padding-et e paracaktuara */
+  font-family: "Poppins"; /* Vendos fontin "Poppins" për tekst */
+  box-sizing: border-box; /* Përfshi margjinat dhe border-in në madhësinë totale të elementit */
+}
+
+/* Stili për trupin e dokumentit */
+body {
+  display: flex; /* Qendro elementët brenda trupit si fleksibil */
+  justify-content: center; /* Qendro elementët horizontalisht */
+  align-items: center; /* Qendro elementët vertikalisht */
+  background: #1f293a; /* Vendos sfondin me ngjyrë të errët */
+  min-height: 100vh; /* Bëje të paktën sa lartësia e ekranit */
+}
+
+/* Stili për kontejnerin që mban animacionin */
+.container {
+  position: relative; /* Pozicion relativ për vendosjen e elementëve të brendshëm */
+  width: 256px; /* Gjerësia e kontejnerit */
+  height: 256px; /* Lartësia e kontejnerit */
+  display: flex; /* Qendrim fleksibil për elementët e brendshëm */
+  justify-content: center; /* Qendro horizontalisht elementët brenda */
+  align-items: center; /* Qendro vertikalisht elementët brenda */
+}
+
+/* Stili për çdo element të animacionit (vijë rrethore) */
+.container span {
+  position: absolute; /* Pozicion absolut brenda kontejnerit */
+  left: 0; /* Fillon nga e majta e kontejnerit */
+  width: 32px; /* Gjerësia e secilës vijë */
+  height: 6px; /* Trashësia e secilës vijë */
+  background: #2c4766; /* Ngjyra fillestare e vijës */
+  border-radius: 8px; /* Këndet e rrumbullakosura për një pamje elegante */
+  transform-origin: 128px; /* Pika e rrotullimit vendoset në mes të kontejnerit */
+  transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50))); /* Rrotullo vijat bazuar në pozicionin e tyre */
+  animation: animateBlink 3s linear infinite; /* Apliko animacionin */
+  animation-delay: calc(var(--i) * (3s / 50)); /* Shto vonesë për secilën vijë për efektin e animuar */
+}
+
+/* Çiklet animacioni për ndryshimin e ngjyrës */
+@keyframes animateBlink {
+  0% {
+    background: #0ef; /* Ngjyra fillestare */
+  }
+  25% {
+    background: #2c4766; /* Ngjyra pas një çereku cikli */
+  }
+}
+
+/* Kontejneri i formës së hyrjes */
+.login-box {
+  position: absolute; /* Pozicionim absolut për të mbuluar sfondin */
+  width: 400px; /* Gjerësia e kutisë së formës */
+}
+
+/* Stili i formës brenda login-box */
+.login-box form {
+  width: 100%; /* Mbulo gjithë gjerësinë e kutisë */
+  padding: 0 50px; /* Hapësirë horizontale nga brendësia e kutisë */
+}
+
+/* Titulli i formës */
+h2 {
+  font-size: 2em; /* Madhësia e madhe e tekstit */
+  color: #0ef; /* Ngjyra kryesore për titullin */
+  text-align: center; /* Qendro tekstin */
+}
+
+/* Kontejner për secilën kuti input */
+.input-box {
+  position: relative; /* Pozicion relativ për të pozicionuar elementët e brendshëm */
+  margin: 25px 0; /* Hapësirë vertikale mes kutive */
+}
+
+/* Stili për kutitë input */
+.input-box input {
+  width: 100%; /* Mbulo gjithë gjerësinë e kutisë */
+  height: 50px; /* Lartësia e kutisë */
+  background: transparent; /* Asnjë sfond */
+  border: 2px solid #2c4766; /* Kufiri me ngjyrë të errët */
+  outline: none; /* Hiq efektin e fokusimit të paracaktuar */
+  border-radius: 40px; /* Kufij të rrumbullakosur për një pamje të butë */
+  font-size: 1em; /* Madhësia e tekstit në kuti */
+  color: #fff; /* Ngjyra e tekstit */
+  padding: 0 20px; /* Hapësirë horizontale brenda kutisë */
+  transition: 0.5s; /* Tranzicion për efektet e animuara */
+}
+
+/* Ndryshim ngjyre kufiri kur kutia fokusohet ose plotësohet */
+.input-box input:focus,
+.input-box input:valid {
+  border-color: #0ef; /* Ngjyra e kufirit gjatë fokusimit */
+}
+
+/* Etiketat brenda input-box */
+.input-box label {
+  position: absolute; /* Pozicion absolut mbi kutinë */
+  top: 50%; /* Qendër vertikalisht */
+  left: 20px; /* Hapësirë nga e majta */
+  transform: translateY(-50%); /* Qendër pozicionimi vertikal */
+  font-size: 1em; /* Madhësia e tekstit */
+  color: #fff; /* Ngjyra fillestare e etiketës */
+  pointer-events: none; /* Bëje të pa-klikueshme */
+  transition: 0.5s ease; /* Tranzicion i lehtë për lëvizjen */
+}
+
+/* Lëvizja dhe ndryshimi i ngjyrës së etiketës kur kutia fokusohet */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: 1px; /* Vendosja sipër kutisë */
+  font-size: 0.8em; /* Redukto madhësinë */
+  background-color: #1f293a; /* Sfond për një efekt të pasur */
+  padding: 0 6px; /* Hapësirë për sfondin */
+  color: #0ef; /* Ndrysho ngjyrën në fokus */
+}
+
+/* Lidhja për fjalëkalimin e harruar */
+.forgot-password {
+  margin: -15px 0 10px; /* Hapësirë mbi dhe poshtë */
+  text-align: center; /* Qendro tekstin */
+}
+
+/* Lidhja për fjalëkalimin e harruar */
+.forgot-password a {
+  font-size: 0.85em; /* Madhësi e vogël teksti */
+  color: #fff; /* Ngjyra e bardhë */
+  text-decoration: none; /* Hiq vizën nën tekst */
+}
+
+/* Nënvizim kur lidha kalon mbi miun */
+.forgot-password a:hover {
+  text-decoration: underline; /* Shto vizën nën tekst */
+}
+
+/* Butoni për submit */
+.btn {
+  width: 100%; /* Mbulo gjithë gjerësinë */
+  height: 45px; /* Lartësia e butonit */
+  border-radius: 45px; /* Këndet e rrumbullakosura */
+  background: #0ef; /* Ngjyra kryesore */
+  border: none; /* Hiq kufirin */
+  outline: none; /* Hiq efektin e fokusimit */
+  cursor: pointer; /* Shto kursorin e miut */
+  font-size: 1em; /* Madhësia e tekstit */
+  color: #1f293a; /* Ngjyra e tekstit */
+  font-weight: 600; /* Trashësi mesatare e tekstit */
+}
+
+/* Lidhja për regjistrim */
+.signup-link {
+  margin: 20px 0 10px; /* Hapësira lart dhe poshtë */
+  text-align: center; /* Qendro tekstin */
+}
+
+/* Lidhja për regjistrim */
+.signup-link a {
+  font-size: 1em; /* Madhësia e tekstit */
+  color: #0ef; /* Ngjyra kryesore */
+  text-decoration: none; /* Hiq vizën nën tekst */
+  font-weight: 600; /* Trashësi mesatare e tekstit */
+}
+
+/* Nënvizim kur lidha kalon mbi miun */
+.signup-link a:hover {
+  text-decoration: underline; /* Shto vizën nën tekst */
+}
